@@ -5,6 +5,7 @@
 
 </template>
 <script>
+import axios from 'axios';
 import { store } from './js/store';
 import AppHeader from './components/AppHeader.vue';
 import AppSearch from './components/AppSearch.vue';
@@ -28,6 +29,11 @@ export default {
   methods:{
     newSearch() {
       console.log(this.store.searchMovie);
+    },
+
+    getCharactesr() {
+      axios.get
+
     },
 
   }
