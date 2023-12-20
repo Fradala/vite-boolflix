@@ -1,4 +1,13 @@
 <template lang="">
+    <header class="container">
+        <nav class="navbar">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            
+        </nav>
+        
+    </header>
     
 </template>
 <script>
