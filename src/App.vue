@@ -28,14 +28,23 @@ export default {
 
   methods:{
     newSearch() {
-      console.log(this.store.searchMovie);
+      this.getCharactesr('https://api.themoviedb.org/3/search/movie?api_key=3c92d587c03d41495b183d4688f2f790&query=' + this.store.searchMovie);
     },
 
-    getCharactesr() {
-      axios.get
+    getCharactesr(url = 'https://api.themoviedb.org/3/search/movie') {
+      axios.get(url)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
 
     },
 
+  },
+  created(){
+    this.getCharactesr();
   }
   
 }
