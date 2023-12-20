@@ -31,10 +31,10 @@ export default {
       this.getCharactesr('https://api.themoviedb.org/3/search/movie?api_key=3c92d587c03d41495b183d4688f2f790&query=' + this.store.searchMovie);
     },
 
-    getCharactesr(url = 'https://api.themoviedb.org/3/search/movie') {
+    getCharactesr(url = 'https://api.themoviedb.org/3/search') {
       axios.get(url)
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
         })
         .catch(function (error) {
           console.log(error);
@@ -43,9 +43,7 @@ export default {
     },
 
   },
-  created(){
-    this.getCharactesr();
-  }
+
   
 }
 </script>

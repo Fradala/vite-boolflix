@@ -6,6 +6,12 @@
             aria-describedby="basic-addon1" @keyup.enter="$emit('search')" v-model="store.searchMovie">
         </div>
     </div>
+
+    <h2>
+        
+    </h2>
+
+
 </template>
 <script>
 import { store } from '../js/store';
