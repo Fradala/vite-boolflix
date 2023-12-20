@@ -1,5 +1,5 @@
 <template lang="">
-  <AppHeader/>
+  <AppHeader @search="searchFilm"/>
   <AppMain/>
 
 </template>
@@ -10,9 +10,21 @@ import AppMain from './components/AppMain.vue';
 
 export default {
   name: 'app',
+  data() {
+    return {
+      store,
+    }
+
+  },
   components: {
     AppHeader,
     AppMain,
+  },
+
+  methods:{
+    searchFilm(){
+
+    },
   }
   
 }
