@@ -1,12 +1,15 @@
 <template lang="">
-  <AppHeader @search="searchFilm"/>
+  <AppHeader />
+  <AppSearch @search="newSearch"/>
   <AppMain/>
 
 </template>
 <script>
-
+import { store } from './js/store';
 import AppHeader from './components/AppHeader.vue';
+import AppSearch from './components/AppSearch.vue';
 import AppMain from './components/AppMain.vue';
+
 
 export default {
   name: 'app',
@@ -18,13 +21,15 @@ export default {
   },
   components: {
     AppHeader,
+    AppSearch,
     AppMain,
   },
 
   methods:{
-    searchFilm(){
-
+    newSearch() {
+      console.log(this.store.searchMovie);
     },
+
   }
   
 }
