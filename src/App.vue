@@ -22,6 +22,7 @@ export default {
   data() {
     return {
       listaFilm: [],
+      listaSerieTv: [],
     }
   },
 
@@ -37,12 +38,27 @@ export default {
         .catch(function(error) {
           console.log(error)
         });
+    },
+
+    getSerie(searchContent = '') {
+      console.log(searchContent);
+
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=3c92d587c03d41495b183d4688f2f790&query=' + searchContent)
+        .then((response) => {
+          console.log(response)
+          this.listaSerieTv = response.data.results;
+
+        })
+        .catch(function(error) {
+          console.log(error)
+        });
     }
 
   },
 
   created() {
     this.getMovies('natale')
+    this.getSerie('magia')
   },
   
 

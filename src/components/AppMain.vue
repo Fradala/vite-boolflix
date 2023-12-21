@@ -1,12 +1,18 @@
 <template lang="">
-    <div>
-        <article v-for="movie in movies">
+    <div class="container">
+        <article v-for="movie in movies" class="text-center">
             <p>
                 titolo: {{ movie.title}} <br> 
                 titolo originale: {{ movie.original_title }} <br> 
                 lingua originale: {{ movie.original_language }} <br>
                 voto: {{ movie.vote_average }}
             </p> 
+
+        </article>
+        <article v-for="serie in series ">
+            <p>
+                titolo: {{ serie.title }}
+            </p>
 
         </article>
     </div>
@@ -19,9 +25,18 @@ export default {
         movies: {
             type: Array,
             required: true,
+        },
+
+        series:{
+            type: Array,
+            required: true,
         }
 
+    
+
     },
+
+   
 }
 </script>
 

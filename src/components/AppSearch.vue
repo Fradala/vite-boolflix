@@ -1,5 +1,5 @@
 <template lang="">
-    <div>
+    <div class="container">
         <input type="text" v-model="searchedString" @keyup.enter="$emit('search', searchedString)">
     </div>
 </template>
