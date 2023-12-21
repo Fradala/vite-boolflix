@@ -1,7 +1,7 @@
 <template lang="">
   
   <AppSearch @search="getMovies"/>
-  <AppMain :movies="listaFilm"/>
+  <AppMain :movies="listaFilm" :series="listaSerieTv"/>
 
 </template>
 <script>
@@ -40,7 +40,7 @@ export default {
         });
     },
 
-    getSerie(searchContent = '') {
+    getSeries(searchContent = '') {
       console.log(searchContent);
 
       axios.get('https://api.themoviedb.org/3/search/tv?api_key=3c92d587c03d41495b183d4688f2f790&query=' + searchContent)
@@ -58,7 +58,7 @@ export default {
 
   created() {
     this.getMovies('natale')
-    this.getSerie('magia')
+    this.getSeries('magia')
   },
   
 
