@@ -1,48 +1,56 @@
 <template lang="">
-  <AppHeader />
-  <AppSearch @search="newSearch"/>
-  <AppMain/>
+  
+  <AppSearch @search="getMovies"/>
+  <AppMain :movies="listaFilm"/>
 
 </template>
 <script>
-import axios from 'axios';
-import { store } from './js/store';
-import AppHeader from './components/AppHeader.vue';
+
+
 import AppSearch from './components/AppSearch.vue';
 import AppMain from './components/AppMain.vue';
-
+import axios from 'axios';
 
 export default {
   name: 'app',
-  data() {
-    return {
-      store,
-    }
-
-  },
   components: {
-    AppHeader,
+    
     AppSearch,
     AppMain,
   },
 
+  data() {
+    return {
+      listaFilm: [],
+    }
+  },
+
   methods:{
-    newSearch() {
-      this.getCharactesr('https://api.themoviedb.org/3/search/movie?api_key=3c92d587c03d41495b183d4688f2f790&query=' + this.store.searchMovie);
-    },
+    getMovies(searchContent = '') {
+      console.log(searchContent);
 
-    getCharactesr(url = 'https://api.themoviedb.org/3/search') {
-      axios.get(url)
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=3c92d587c03d41495b183d4688f2f790&query=' + searchContent)
         .then((response) => {
-          console.log(response.data);
+          console.log(response)
+          this.listaFilm = response.data.results;
         })
-        .catch(function (error) {
-          console.log(error);
+        .catch(function(error) {
+          console.log(error)
         });
-
-    },
+    }
 
   },
+
+  created() {
+    this.getMovies('natale')
+  },
+  
+
+  
+ 
+
+  
+  
 
   
 }
