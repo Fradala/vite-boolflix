@@ -13,7 +13,7 @@
                 
 
             
-                    <p class="d-none">
+                    <p class="">
                         titolo: {{ movie.title}} <br> 
                         titolo originale: {{ movie.original_title }} <br> 
                         lingua originale: {{ movie.original_language }} <br>
@@ -36,7 +36,7 @@
                     titolo: {{ serie.name }} <br>   
                     titolo originale: {{ serie.original_name }} <br> 
                     lingua originale: {{ serie.original_language }} <br>
-                    voto: arrotondaPerEccesso({{ serie.vote_average }})
+                    voto:  {{ arrotondaPerEccesso (serie.vote_average) }}
                     <img :src=" 'http://image.tmdb.org/t/p/w342' + serie.poster_path " alt="immagine della serie">
                 
                 </p>
@@ -85,10 +85,7 @@ article{
     width: 200px;
     height: 300px;
 
-    &:hover{
-        display: none;
-    }
-
+   
 
     }
 }
