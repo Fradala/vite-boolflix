@@ -17,7 +17,7 @@
                         titolo: {{ movie.title}} <br> 
                         titolo originale: {{ movie.original_title }} <br> 
                         lingua originale: {{ movie.original_language }} <br>
-                        voto: {{ movie.vote_average }}   
+                        voto: {{ convertiNumeri (movie.vote_average) }}   
                     </p> 
                 </div>
 
@@ -36,7 +36,7 @@
                     titolo: {{ serie.name }} <br>   
                     titolo originale: {{ serie.original_name }} <br> 
                     lingua originale: {{ serie.original_language }} <br>
-                    voto:  {{ arrotondaPerEccesso (serie.vote_average) }}
+                    voto:  {{ convertiNumeri (serie.vote_average) }}
                     <img :src=" 'http://image.tmdb.org/t/p/w342' + serie.poster_path " alt="immagine della serie">
                 
                 </p>
@@ -63,9 +63,11 @@ export default {
     
 
     },
-    arrotondaPerEccesso(numero) {
-        const risultato = Math.cell(numero / 5) * 5;
-        return risultato;
+    
+    methods: {
+        convertiNumeri(voto) {
+            return (voto / 10) * 5;
+        }
     }
 
    
