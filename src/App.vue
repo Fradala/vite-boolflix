@@ -43,7 +43,7 @@ export default {
     getSeries(searchContent = '') {
       console.log(searchContent);
 
-      axios.get('https://api.themoviedb.org/3/search/tv?api_key=3c92d587c03d41495b183d4688f2f790&query=' + searchContent)
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&query=' + searchContent)
         .then((response) => {
           console.log(response)
           this.listaSerieTv = response.data.results;

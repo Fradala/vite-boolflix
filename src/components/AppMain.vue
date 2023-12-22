@@ -1,6 +1,6 @@
 <template lang="">
     <div class="container">
-        <article v-for="movie in movies" class="text-center">
+        <article v-for="movie in movies" class="text-center mt-3">
             <p>
                 titolo: {{ movie.title}} <br> 
                 titolo originale: {{ movie.original_title }} <br> 
@@ -8,12 +8,12 @@
                 voto: {{ movie.vote_average }}
             </p> 
 
-        </article>
-        <article v-for="serie in series ">
+        </article> 
+        <article v-for="serie in series " class="mt-3">
             <p>
-                
-                titolo: {{ serie.title }}
-                titolo originale: {{ serie.original_title }} <br> 
+
+                titolo: {{ serie.name }} <br>
+                titolo originale: {{ serie.original_name }} <br> 
                 lingua originale: {{ serie.original_language }} <br>
                 voto: {{ serie.vote_average }}
 
