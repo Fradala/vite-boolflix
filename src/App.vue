@@ -1,6 +1,6 @@
 <template lang="">
   
-  <AppSearch @search="search"/>
+  <AppSearch @search="searchMoviesAndSeries"/>
   <AppMain :movies="listaFilm" :series="listaSerieTv"/>
 
 </template>
@@ -44,8 +44,9 @@ export default {
         }); 
     },
 
-    function search(film) {
+    searchMoviesAndSeries(film) {
       this.getMovies(film)
+      this.getSeries(film)
     },
 
     getSeries(searchContent = '') {
