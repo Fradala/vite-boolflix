@@ -1,6 +1,6 @@
 <template lang="">
   
-  <AppSearch @search="getMovies(); getSeries()"/>
+  <AppSearch @search="search"/>
   <AppMain :movies="listaFilm" :series="listaSerieTv"/>
 
 </template>
@@ -28,6 +28,8 @@ export default {
 
   methods:{
 
+   
+
     
     getMovies(searchContent = '') {
       console.log(searchContent);
@@ -39,11 +41,17 @@ export default {
         })
         .catch(function(error) {
           console.log(error)
-        });
+        }); 
+    },
+
+    function search(film) {
+      this.getMovies(film)
     },
 
     getSeries(searchContent = '') {
       console.log(searchContent);
+
+      
 
       axios.get('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&query=' + searchContent)
         .then((response) => {
@@ -53,7 +61,7 @@ export default {
         })
         .catch(function(error) {
           console.log(error)
-        });
+        });   
     }
 
   },
@@ -61,16 +69,14 @@ export default {
   created() {
     this.getMovies('natale')
     this.getSeries('magia')
-  },
-  
 
-  
+    
+  },  
+
  
 
-  
-  
 
-  
+
 }
 </script>
 <style lang="scss">
