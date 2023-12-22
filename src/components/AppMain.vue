@@ -11,7 +11,13 @@
         </article>
         <article v-for="serie in series ">
             <p>
+                
                 titolo: {{ serie.title }}
+                titolo originale: {{ serie.original_title }} <br> 
+                lingua originale: {{ serie.original_language }} <br>
+                voto: {{ serie.vote_average }}
+
+              
             </p>
 
         </article>
