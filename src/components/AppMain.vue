@@ -14,7 +14,7 @@
         <article v-for="serie in series " class="mt-3">
             <p>
 
-                titolo: {{ serie.name }} <br>
+                titolo: {{ serie.name }} <i class="fa-solid fa-house"></i>  <br>   
                 titolo originale: {{ serie.original_name }} <br> 
                 lingua originale: {{ serie.original_language }} <br>
                 voto: {{ serie.vote_average }}
@@ -43,6 +43,10 @@ export default {
     
 
     },
+    arrotondaPerEccesso(numero) {
+        const risultato = Math.cell(numero / 5) * 5;
+        return risultato;
+    }
 
    
 }
