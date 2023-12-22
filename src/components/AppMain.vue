@@ -6,6 +6,7 @@
                 titolo originale: {{ movie.original_title }} <br> 
                 lingua originale: {{ movie.original_language }} <br>
                 voto: {{ movie.vote_average }}
+                
             </p> 
 
         </article> 

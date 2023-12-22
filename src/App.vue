@@ -1,6 +1,6 @@
 <template lang="">
   
-  <AppSearch @search="getMovies"/>
+  <AppSearch @search="getMovies(); getSeries()"/>
   <AppMain :movies="listaFilm" :series="listaSerieTv"/>
 
 </template>
@@ -27,6 +27,8 @@ export default {
   },
 
   methods:{
+
+    
     getMovies(searchContent = '') {
       console.log(searchContent);
 
